@@ -1,0 +1,118 @@
+/* Main Rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+body {
+    font-family: 'Orbitron', sans-serif;
+    min-height: 100vh;
+    background-color: #d5e6f7;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Styling */
+/* Calculator */
+.calculator {
+    width: 600px;
+    max-width: 100%;
+    background-color: #384353;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    border-radius: 14px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, .5);
+    overflow: hidden;
+}
+.calculator h1 {
+    text-align: center;
+    margin: 8px 5px;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+}
+/* Calculator Screen */
+.calculator .screen {
+    background-color: #515d69;
+    padding: 32px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    min-height: 128px;
+}
+.calculator .screen .eq {
+    font-size: 1.2em;
+    color: #88939b;
+    margin-bottom: 8px;
+}
+.calculator .screen .eq.focus {
+    font-size: 2em;
+    color: #fff;
+}
+.calculator .screen .output {
+    font-size: 2em;
+}
+
+/* Calculator Keyboard */
+/* Calculator Num_Pad */
+.calculator .keyboard {
+    display: flex;
+    gap: 1px;
+    background-color: #69778b;
+}
+.calculator .keyboard .num {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+}
+.calculator .keyboard .num span {
+    padding: 20px 0;
+    flex: 1;
+    text-align: center;
+    background-color: #384353;
+    cursor: pointer;
+}
+.calculator .keyboard .num .num-key {
+    background-color: #5c6b7f;
+}
+.calculator .keyboard .num .clear {
+    color: #f53d6c;
+    grid-column: 1 / span 2;
+}
+.calculator .keyboard .num .equal {
+    background-image: linear-gradient(120deg, #f53d6c 70%, #fd6256 90%);
+    grid-column: 3 / span 2;
+}
+
+/* Calulator Science */
+.calculator .keyboard .science {
+    min-width: 200px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    flex: 1;
+    gap: 1px;
+}
+.calculator .keyboard .science span {
+    background-color: #3f4b5d;
+    padding: 20px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Media Queries */
+@media (max-width: 567px) {
+    .calculator .keyboard {
+        flex-direction: column-reverse;
+    }
+    .calculator .keyboard .science {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
