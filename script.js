@@ -51,7 +51,7 @@ function focusState() {
 
 // Backspace Function
 backspace.addEventListener('click', () => {
-    if (arr && arr.length > 0) {
+    if (arr && arr.length > 0 && input.classList.contains('focus')) {
         arr.length -= 1;
         input.textContent = arr.join('');
     }
@@ -93,7 +93,6 @@ equal.addEventListener('click', () => {
     } catch (err) {
         output.textContent = 'Error';
     }
-    
     // Class Focus State
     input.classList.remove('focus');
 });
